@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>收款宝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="files/css/normalize.css">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link rel="stylesheet" href="files/css/iconfont.css">
+        <link rel="stylesheet" href="files/css/tabs_switch.css">
+    </head>
+    <body class="forget-psw-page">
+        <header>
+            <a href="" class="back"><i class="iconfont icon-fanhui"></i></a>
+            <h1>无卡收款</h1>
+        </header>
+        <div class="main">
+        <div class="sz">收款金额:<h1>126.80</h1></div>
+        <div class="wrap">
+    <div class="tabs">
+        <a href="#" hidefocus="true" class="active">选择本人银行卡</a>
+        <a href="#" hidefocus="true">使用他人银行卡</a>
+    </div>    
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        	<div class="swiper-slide">
+           <div class="content-slide">
+                <div class="home_busi">
+    	<div id="modal-bank-select">
+                        <div class="bank-list">
+                            <ul>
+                                <li class="selected">
+                                    <a href="javascript:;" class="btn-choose-bank js-choose-bank">
+                                        <i class="iconfont icon-gouxuan"></i>
+                                        <div class="img-box"><img src="files/img/bank_icon.png" width="100%"></div>
+                                        <h6>中国工商银行（尾号8763）</h6>
+                                        <p>储蓄卡</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="btn-choose-bank js-choose-bank">
+                                        <i class="iconfont icon-gouxuan"></i>
+                                        <div class="img-box"><img src="files/img/bank_icon.png" width="100%"></div>
+                                        <h6>中国工商银行（尾号8763）</h6>
+                                        <p>信用卡</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-set2"><a href="无卡收款-新卡.html">使用新卡支付</a></div>
+        </div>
+            
+            <div class="btn-set">
+                <a href="无卡收款-成功.html" class="btn btn-primary">确认收款</a>
+            </div>
+    </div>
+               </div>
+        </div>
+        	<div class="swiper-slide">
+            <div class="content-slide">
+    <div class="ewm">
+    	<img src="files/img/pic1.png" width="240">
+    </div>            
+    		</div>
+        </div>
+        </div>
+   </div>
+   
+</div>      
+        </div>
+        
+        <script type="text/javascript" src="files/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="files/js/fastclick.js"></script>
+        <script type="text/javascript" src="files/js/main.js"></script>
+        <!-- 页面单独调用  validator表单验证 -->
+        <link rel="stylesheet" type="text/css" href="files/js/jquery.validator.css">
+        <script type="text/javascript" src="files/js/jquery.validator.min.js"></script>
+        <script type="text/javascript" src="files/js/zh-CN.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#modal-bank-select').on('click','.js-choose-bank',function(){
+                    var $li = $(this).parent('li');
+                    if(!$li.hasClass('disabled')){
+                        $li.siblings().removeClass('selected');
+                        $li.addClass('selected');
+                        //$('#modal-bank-select').modal('hide')
+                    }
+                })
+            })
+        </script>
+        <script src="files/js/idangerous.swiper-2.1.min.js"></script> 
+<script>
+var tabsSwiper = new Swiper('.swiper-container',{
+	speed:500,
+	onSlideChangeStart: function(){
+		$(".tabs .active").removeClass('active');
+		$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+	}
+});
+
+$(".tabs a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".tabs .active").removeClass('active');
+	$(this).addClass('active');
+	tabsSwiper.swipeTo($(this).index());
+});
+
+$(".tabs a").click(function(e){
+	e.preventDefault();
+});
+</script>
+    </body>
+</html>

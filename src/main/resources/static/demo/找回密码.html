@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>收款宝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="files/css/normalize.css">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link rel="stylesheet" href="files/css/iconfont.css">
+    </head>
+    <body class="setting-page bund-phone-page">
+        <header>
+            <a href="" class="back"><i class="iconfont icon-fanhui"></i></a>
+            <h1>找回密码</h1>
+        </header>
+        <div class="main">
+            <h2 class="page-title">请输入需要绑定的手机号</h2>
+            <div class="container">
+                <form>
+                    <div class="form-group form-inverse">
+                        <label>手机号：</label>
+                        <div class="input-group">
+                            <input type="tel" name="phone" placeholder="请输入手机号" class="form-control" data-rule="required;mobile">
+                        </div>
+                    </div>
+                    <div class="form-group form-inverse yzm">
+                        <label>验证码</label>
+                        <div class="input-group">
+                            <input type="tel" name="yzm" placeholder="请输入短信验证码" class="form-control" maxlength="6" data-rule="required;length(6)">
+                        </div>
+                        <a href="javascript:;" class="btn-yzm js-yzm">获取验证码</a>
+                    </div>
+                </form>
+                <div class="btn-set">
+                    <a href="找回密码-新密码.html" class="btn btn-primary" disabled>验证</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="files/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="files/js/fastclick.js"></script>
+        <script type="text/javascript" src="files/js/main.js"></script>
+        <!-- 页面单独调用  validator表单验证 -->
+        <link rel="stylesheet" type="text/css" href="files/js/jquery.validator.css">
+        <script type="text/javascript" src="files/js/jquery.validator.min.js"></script>
+        <script type="text/javascript" src="files/js/zh-CN.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('.form-control').on('keyup',function(){
+                    var val = $(this).val();
+                    if(val != ''){
+                        $()
+                        $('.btn.btn-primary').removeAttr('disabled');
+                    }else{
+                        $('.btn.btn-primary').attr('disabled',true);
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

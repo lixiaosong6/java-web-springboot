@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>收款宝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="files/css/normalize.css">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link rel="stylesheet" href="files/css/iconfont.css">
+    </head>
+    <body class="setting-page id-page">
+        <header>
+            <a href="" class="back"><i class="iconfont icon-fanhui"></i></a>
+            <h1>身份证认证</h1>
+        </header>
+        <div class="main">
+            
+            <form>
+            <h2 class="page-title">请填写真实的个人信息</h2>
+              <ul>
+                <li class="form-group">
+                  <label>姓名：</label>
+                  <div class="input-group">
+                    <input type="text" name="name" placeholder="持卡人姓名" data-rule="required;chinese" class="form-control">
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label>身份证号：</label>
+                  <div class="input-group">
+                    <input type="text" name="id" placeholder="持卡人身份证号" data-rule="required;IDcard" class="form-control">
+                  </div>
+                </li>
+              </ul>
+            </form>
+            <div class="btn-set">
+                <a href="实人认证2.html" class="btn btn-primary" disabled>下一步</a>
+            </div>
+        </div>
+        <div id="modal-files" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <ul>
+                        <li><a href="">拍照</a></li>
+                        <li><a href="">从手机照片选择</a></li>
+                    </ul>
+                    <div class="close-set"><a href="javascript:;" data-dismiss="modal" >取消</a></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="files/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="files/js/fastclick.js"></script>
+        <script type="text/javascript" src="files/js/main.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                // $.toast({
+                //     heading:'正在提交',
+                //     type:'loading',
+                // })
+            })
+        </script>
+    </body>
+</html>

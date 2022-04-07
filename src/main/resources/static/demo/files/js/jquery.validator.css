@@ -1,0 +1,67 @@
+.n-inline-block,
+.nice-validator input,
+.nice-validator select,
+.nice-validator textarea,
+.msg-wrap,
+.n-icon,
+.n-msg {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.nice-validator .msg-container .msg-box {
+  display: block;
+}
+.nice-validator .msg-container .msg-wrap {
+  position: static;
+}
+.msg-box {
+  position: absolute;
+  left: -2px;
+  bottom: -34px;
+  z-index: 99;
+  font-size: 12px;
+  color: #ff4100;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+}
+.msg-wrap {
+  position: relative;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+.msg-box .n-icon,
+.msg-box .n-icon:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.msg-box .n-icon {
+  top: -9px;
+  left: 15px;
+  border-width: 9px;
+  border-top-width: 0;
+  border-bottom-color: #999;
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+.msg-box .n-icon:after {
+  content: "";
+  border-width: 8px;
+  top: 1px;
+  margin-left: -8px;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}

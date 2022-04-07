@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>收款宝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="files/css/normalize.css">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link rel="stylesheet" href="files/css/iconfont.css">
+    </head>
+    <body class="setting-page bund-phone-page">
+        <header>
+            <a href="" class="back"><i class="iconfont icon-fanhui"></i></a>
+            <h1>找回密码</h1>
+        </header>
+        <div class="main">
+          <div class="container">
+              <form>
+                    <div class="form-group form-inverse">
+                        <label>新密码：</label>
+                        <div class="input-group">
+                            <input type="password" name="phone" placeholder="新输入新密码" class="form-control" data-rule="required;mobile">
+                        </div>
+                    </div>
+                    <div class="form-group form-inverse">
+                        <label>确认密码：</label>
+                        <div class="input-group">
+                            <input type="password" name="yzm" placeholder="再次输入密码" class="form-control" maxlength="6" data-rule="required;length(6)">
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-set">
+                    <a href="javascript:;" class="btn btn-primary" disabled>确认</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="files/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="files/js/fastclick.js"></script>
+        <script type="text/javascript" src="files/js/main.js"></script>
+        <!-- 页面单独调用  validator表单验证 -->
+        <link rel="stylesheet" type="text/css" href="files/js/jquery.validator.css">
+        <script type="text/javascript" src="files/js/jquery.validator.min.js"></script>
+        <script type="text/javascript" src="files/js/zh-CN.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('.form-control').on('keyup',function(){
+                    var val = $(this).val();
+                    if(val != ''){
+                        $()
+                        $('.btn.btn-primary').removeAttr('disabled');
+                    }else{
+                        $('.btn.btn-primary').attr('disabled',true);
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sale.dao.SaleDetailDao">
+
+	<select id="selectSaleDetailList" parameterType="com.sale.bean.SaleDetail"
+		resultType="com.sale.bean.SaleDetail">
+		SELECT *
+		FROM sale_detail where CHECK_STATUS =
+		#{check_status} and CHECK_E_DATE = #{check_e_date}
+	</select>
+
+	<update id="updateSaleDetail" parameterType="com.sale.bean.SaleDetail">
+		UPDATE sale_detail
+		<set>
+			<if test="check_status != null and check_status != ''">
+				CHECK_STATUS = #{check_status},
+			</if>
+		</set>
+		WHERE SALE_ID=#{sale_id}
+	</update>
+</mapper>

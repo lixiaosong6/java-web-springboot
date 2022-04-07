@@ -1,0 +1,90 @@
+body,html
+{
+margin:0; 
+padding:0;
+width: 100%;
+height: 100%;
+font-size: 42.6667px;
+}
+.con {
+	width: 100%;
+	background-size: cover;
+	background-image: url(./images/app_ui_pd_bg01@2x.png);
+	text-align: center;
+}
+
+.conbk {
+	width: 7.4rem;
+	
+	background-image: url(./images/app_ui_pd_bg@2x.png);
+	background-repeat:no-repeat;
+	background-size: 100%;
+	position: absolute;
+	left: 50%;
+	top:10%;
+	margin-left:-3.71rem;
+	
+	
+}
+
+.texttop {
+	padding-top: 0.5rem;
+	font-size: 0.4rem;
+	text-align: center; 
+
+}
+
+.topnext {
+	font-size: 0.3rem;
+	padding-top: 5px;
+	padding-left: 0.15rem;
+	color: #7f7f81;
+}
+.topthen {
+	padding-top: 0.2rem;
+	font-size: 0.3rem;
+}
+.topbottom {
+	padding-top: 0.1rem;
+	font-size: 0.4rem;
+	color: #ff623c;
+}
+.topbut {
+	background-image: url(./images/app_ui_pd_button@2x.png);
+	background-repeat:no-repeat;
+	font-size: 0.4rem;
+	background-size: 40%;
+	background-position-x:50%;
+	width: 100%;
+	height: 100%;
+	padding-top: 8px;
+	padding-bottom: 15px;
+}
+.toprule {
+	background-image: url(./images/app_ui_pd_gzbg@2x.png);
+	background-repeat:no-repeat;
+	font-size: 0.2rem;
+	background-size: 50%;
+	background-position-x:50%;
+	width: 100%;
+	height: 30px;
+	padding-top: 3px;
+	
+}
+
+.title {
+	font-size: 0.8 rem;
+	color: #323232;
+	text-align: center;
+	padding-bottom: 1rem;
+
+}
+
+
+
+.comit {
+	margin-top:10px;
+	margin-bottom: 50px;
+	font-size: 0.3rem;
+}
+

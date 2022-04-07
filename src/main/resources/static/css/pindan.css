@@ -1,0 +1,22 @@
+body,html
+{
+margin:0;
+padding:0;
+/*width: 640px;
+height: 100%;*/
+font-size: 42.6667px;
+
+/*min-width: 320px;*/
+font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+-webkit-text-size-adjust: none
+}
+
+.main{width: 100%; max-width: 1080px; margin: 0 auto;}
+.main img{width: 100%;}
+
+
+
+
+
+
+

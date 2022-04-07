@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sale.dao.SaleDayCountDao">
+
+	<insert id="insertSaleDayCount" parameterType="com.sale.bean.SaleDayCount"
+		useGeneratedKeys="true" keyProperty="d_count_id">
+		INSERT INTO
+		sale_day_count(COUNT_DATE,
+		CREATE_TIME, SALE_ID,
+		COUNT_TYPE,
+		P_ID,
+		SALE_NUM,
+		SALE_FEE,
+		SYS_MER_ID)
+		VALUES(#{count_date},
+		#{create_time},#{sale_id},
+		#{count_type},
+		#{p_id},
+		#{sale_num},
+		#{sale_fee},
+		#{sys_mer_id})
+	</insert>
+
+	<select id="selectSaleDayCount" resultType="com.sale.bean.SaleDayCount"
+		parameterType="com.sale.bean.SaleDayCount">
+		SELECT
+		sum(SALE_NUM),sum(SALE_FEE)
+		FROM sale_day_count
+		<where>
+			<if test="sale_id != '' and sale_id != null">
+				AND SALE_ID = #{sale_id}
+			</if>
+			<if test="count_type != '' and count_type != null">
+				AND COUNT_TYPE = #{count_type}
+			</if>
+			AND COUNT_DATE between #{startTime} AND #{endTime}
+		</where>
+	</select>
+	<select id="selectWithMonth" resultType="com.sale.bean.SaleDayCount">
+		SELECT
+		sum(SALE_NUM),sum(SALE_FEE),sum(SALE_NUM_L1),sum(SALE_FEE_L1),sum(SALE_NUM_L2),sum(SALE_FEE_L2)
+		FROM sale_day_count
+		<where>
+			<if test="count_type != '' and count_type != null">
+				AND COUNT_TYPE = #{count_type}
+			</if>
+			AND COUNT_DATE like #{date}"%"
+		</where>
+		GROUP BY SALE_ID
+	</select>
+
+	<update id="update" parameterType="com.sale.bean.SaleDayCount">
+		UPDATE sale_day_count
+		<set>
+			<if test="sale_num_l1 != null and sale_num_l1 != ''">
+				SALE_NUM_L1 = #{sale_num_l1},
+			</if>
+			<if test="sale_fee_l1 != null and sale_fee_l1 != ''">
+				SALE_FEE_L1 = #{sale_fee_l1},
+			</if>
+			<if test="sale_num_l2 != null and sale_num_l2 != ''">
+				SALE_NUM_L2 = #{sale_num_l2},
+			</if>
+			<if test="sale_fee_l2 != null and sale_fee_l2 != ''">
+				SALE_FEE_L2 = #{sale_fee_l2},
+			</if>
+		</set>
+		WHERE SALE_ID=#{sale_id}
+	</update>
+
+	<update id="updateWithDate" parameterType="com.sale.bean.SaleDayCount">
+		UPDATE sale_day_count
+		<set>
+			<if test="valid != null and valid != ''">
+				VALID = #{valid},
+			</if>
+		</set>
+		WHERE SALE_ID=#{sale_id} AND COUNT_DATE = #{count_date}
+	</update>
+
+</mapper>

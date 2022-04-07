@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>收款宝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="files/css/normalize.css">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link rel="stylesheet" href="files/css/iconfont.css">
+    </head>
+    <body class="bank-page bank-entering-2-page">
+        <header>
+            <a href="" class="back"><i class="iconfont icon-fanhui"></i></a>
+          <h1>添加结算卡</h1>
+        </header>
+        <div class="main">
+            <h2 class="page-title">请绑定持卡人本人的银行卡</h2>
+            <div class="selected-bank">
+                <div class="img-box"><img src="files/img/bank_icon.png" width="100%"></div>
+                <h6>中国工商银行（尾号8763）</h6>
+                <p>信用卡</p>
+            </div>
+            <form>
+                <ul>
+                  <li class="form-group">
+                      <label>预留手机号：</label>
+                      <div class="input-group"><input type="tel" name="phone" placeholder="银行预留手机号码" data-rule="required;mobile" class="form-control"></div>
+                    </li>
+                    <li class="form-group yzm">
+                        <label>验证码：</label>
+                        <div class="input-group"><input type="tel" name="yzm" placeholder="请输入短信验证码" maxlength="6" class="form-control" data-rule="required;length(6)"></div>
+                        <a href="javascript:;" class="btn-yzm js-yzm">获取验证码</a>
+                    </li>
+                    <li class="agree-line">
+                        <input type="checkbox" class="chk" value="1" id="check-agree" /><label for="check-agree">同意<a href="">《服务协议》</a></label>
+                    </li>
+                </ul>
+            </form>
+            <div class="btn-set">
+                <a href="我的结算卡-绑定结果.html" class="btn btn-primary" disabled>下一步</a>
+            </div>
+            <p class="tips text-center">以上信息已安全加密，仅用于银行验证</p>
+        </div>
+        <script type="text/javascript" src="files/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="files/js/fastclick.js"></script>
+        <script type="text/javascript" src="files/js/main.js"></script>
+        <!-- 页面单独调用  validator表单验证 -->
+        <link rel="stylesheet" type="text/css" href="files/js/jquery.validator.css">
+        <script type="text/javascript" src="files/js/jquery.validator.min.js"></script>
+        <script type="text/javascript" src="files/js/zh-CN.js"></script>
+        <script type="text/javascript">
+            
+            $(function(){
+                
+                $('.form-control').on('keyup',function(){
+                    var val = $(this).val();
+                    if(val != ''){
+                        $('.btn.btn-primary').removeAttr('disabled');
+                    }else{
+                        $('.btn.btn-primary').attr('disabled',true);
+                    }
+                })
+                
+            })
+        </script>
+    </body>
+</html>
