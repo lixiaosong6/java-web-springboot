@@ -1,0 +1,55 @@
+server:
+  port: 8080
+
+#Spring整合MP
+mybatis-plus:
+  #定义别名包
+  type-aliases-package: com.lijialiang.bean
+  #导入映射文件
+  mapper-locations: classpath:/mapper/*.xml
+  #开启驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+spring:
+  rabbitmq:
+    username: admin
+    password: admin
+    addresses: 127.0.0.1:5672
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/ljl-test?useUnicode=true&characterEncoding=UTF-8&autoReconnectForPools=true
+    username: root
+  #解决升级 Spring Boot 2.6后，因循环引用导致启动时报错的问题
+  main:
+    allow-circular-references: true
+#  mail:
+#    host: smtp.qq.com
+#    password: cqrgefljkzyfcbbf
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#            required: true
+#    username: 360211323@qq.com
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .jsp
+  redis:
+    database: 1
+    host: 127.0.0.1
+    pool:
+      max-active: 10
+      max-idle: 10
+      max-wait: -1
+      min-idle: 2
+    port: 6379

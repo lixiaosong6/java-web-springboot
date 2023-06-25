@@ -4,10 +4,12 @@ import com.sale.util.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -18,16 +20,16 @@ import java.util.Map;
  * @Author: muzi
  * @Date: 2017年3月29日 下午4:35:39
  */
-// @RestController
-// @EnableAutoConfiguration
+ @RestController
+ @EnableAutoConfiguration
 @Controller
-public class TestController {
+public class UserController {
 
   // 从 application.properties 中读取配置，如取不到默认值为Hello Shanhy
   @Value("${application.hello:Hello Angel}")
   private String hello;
 
-  private final static Logger logger = LoggerFactory.getLogger(TestController.class);
+  private final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
   @RequestMapping("/")
   String home(Map<String, Object> model) {
